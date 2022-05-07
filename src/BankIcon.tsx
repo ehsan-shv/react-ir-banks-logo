@@ -16,7 +16,7 @@ interface BankIconProps {
   margin?: string;
 }
 
-const BankIcon: FC<BankIconProps> = ({
+export const BankIcon: FC<BankIconProps> = ({
   digits,
   onFindBankName,
   size = '40px',
@@ -48,5 +48,3 @@ const BankIcon: FC<BankIconProps> = ({
   };
   return bankId();
 };
-
-export default BankIcon;
