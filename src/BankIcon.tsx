@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 // @ts-ignore: Unreachable code error
 import icons from './icons.svg';
 import banksCode from './banksCode';
@@ -22,8 +22,9 @@ export const BankIcon: FC<BankIconProps> = ({
   size = '40px',
   margin = '8px',
 }) => {
-  const bankId = () => {
-    if (!digits) return <></>;
+  const [element, setElement] = useState(<></>);
+  useEffect(() => {
+    if (!digits) return;
 
     if (digits && digits.toString().length === 16) {
       const code = digits.toString().substr(0, 6);
@@ -31,10 +32,9 @@ export const BankIcon: FC<BankIconProps> = ({
 
       if (findBank) {
         if (onFindBankName) onFindBankName(findBank.name);
-        if (onFindBankName) onFindBankName('');
-        return (
+        setElement(
           <svg
-            className="c-IRBankIcon"
+            className="c-irbankicon"
             style={{ width: size, height: size, margin }}
           >
             <use xlinkHref={`${icons}#${findBank.id}`}></use>
@@ -42,12 +42,13 @@ export const BankIcon: FC<BankIconProps> = ({
         );
       } else {
         if (onFindBankName) onFindBankName('');
-        return <></>;
+        return;
       }
     } else {
       if (onFindBankName) onFindBankName('');
-      return <></>;
+      return;
     }
-  };
-  return bankId();
+  }, [digits, margin, onFindBankName, size]);
+
+  return element;
 };
