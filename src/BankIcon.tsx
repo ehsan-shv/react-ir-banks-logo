@@ -24,6 +24,7 @@ export const BankIcon: FC<BankIconProps> = ({
 }) => {
   const [element, setElement] = useState(<></>);
   useEffect(() => {
+    setElement(<></>);
     if (!digits) return;
 
     if (digits && digits.toString().length === 16) {
