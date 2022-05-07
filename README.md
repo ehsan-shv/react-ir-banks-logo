@@ -39,9 +39,9 @@ function App() {
 
 ## Props
 
-| Props          | Value Type             | Default Value |
-| -------------- | ---------------------- | ------------- |
-| digits         | `number /| string`     | is required   |
-| size           | `string`               | '40px'        |
-| margin         | `string`               | '8px'         |
-| onFindBankName | (name: string) => void | -             |
+| Props          | Value Type               | Default Value |
+| -------------- | ------------------------ | ------------- |
+| digits         | `number /| string`       | is required   |
+| size           | `string`                 | '40px'        |
+| margin         | `string`                 | '8px'         |
+| onFindBankName | `(name: string) => void` | -             |
