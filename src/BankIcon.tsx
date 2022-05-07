@@ -31,6 +31,7 @@ export const BankIcon: FC<BankIconProps> = ({
 
       if (findBank) {
         if (onFindBankName) onFindBankName(findBank.name);
+        if (onFindBankName) onFindBankName('');
         return (
           <svg
             className="c-IRBankIcon"
@@ -40,9 +41,11 @@ export const BankIcon: FC<BankIconProps> = ({
           </svg>
         );
       } else {
+        if (onFindBankName) onFindBankName('');
         return <></>;
       }
     } else {
+      if (onFindBankName) onFindBankName('');
       return <></>;
     }
   };
