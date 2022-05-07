@@ -1,0 +1,74 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "name": "react-ir-banks-logo",
+  "author": "Ehsan Shahvirdi",
+  "description": "A React component that returns logos of Iranian banks based on card number.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehsan-shv/react-ir-banks-logo.git"
+  },
+  "keywords": [
+    "react",
+    "bank-logo",
+    "iranian-banks"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "module": "dist/react-ir-banks-logo.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/react-ir-banks-logo.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-ir-banks-logo.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "husky": "^7.0.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "size-limit": "^7.0.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "rollup-plugin-svg": "^2.0.0"
+  }
+}
